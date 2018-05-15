@@ -1,0 +1,8 @@
+{
+    "name": "diverse-coders",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "start": "(cd api && rails s) & (cd client && yarn start)"
+    }
+}
