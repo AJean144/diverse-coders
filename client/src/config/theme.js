@@ -28,23 +28,23 @@ export const theme = {
             base:
                 "'Assistant', sans-serif",
             heading:
-                "'Assistant', sans-serif",
+                "'Kaushan Script', cursive",
         },
         lineHeight: {
             base: '1.5',
             heading: '1.2',
         },
         sizes: {
-            base: '14px',
-            xxs: '8px',
-            xs: '10px',
-            s: '12px',
-            l: '16px',
-            xl: '24px',
-            h1: '24px',
-            h2: '20px',
-            h3: '16px',
-            h4: '12px',
+            base: '1rem',
+            xxs: '0.2rem',
+            xs: '0.4rem',
+            s: '0.8rem',
+            l: '1.6rem',
+            xl: '2rem',
+            h1: '3rem',
+            h2: '2.8rem',
+            h3: '2.6rem',
+            h4: '2.4rem',
         },
         weights: {
             light: 200,
@@ -58,7 +58,11 @@ export const theme = {
         s: '2px',
         l: '20px',
     },
-    boxShadow: '0px 1px 8px 5px rgba(0,0,0,0.75)',
+    boxShadow: {
+        light: '0px 1px 8px 1px rgba(0,0,0,0.35)',
+        dark: '0px 1px 8px 1px rgba(0,0,0,0.55)',
+        extraDark: '0px 1px 8px 5px rgba(0,0,0,0.75)',
+    },
     spacing: {
         base: '16px',
         xs: '5px',
