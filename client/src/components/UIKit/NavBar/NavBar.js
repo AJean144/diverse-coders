@@ -11,7 +11,7 @@ const NavBar = () => (
         gap='20px'
         cols='12'
         padding={theme.spacing.s}
-        bgColor={theme.colors.contrast.base}
+        bgColor={theme.colors.black}
         textColor={theme.textColors.inverse}
         dropShadow
     >
