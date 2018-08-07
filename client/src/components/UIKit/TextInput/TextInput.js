@@ -1,14 +1,10 @@
 import React from 'react'
-import FontAwesome from 'react-fontawesome'
 import Input from './styled/Input'
 import Container from './styled/Container'
-import Icon from '../Icon'
 import InputContainer from './styled/InputContainer'
 import Label from './styled/Label'
 import IconLeft from './styled/IconLeft'
 import IconRight from './styled/IconRight'
-
-import { theme } from '../../../config/theme'
 
 const TextInput = ({ type, placeholder, inline, iconRight, label, name, labelWidth, iconLeft, width, padding }) => (
     <Container inline={inline} iconRight={iconRight} padding={padding}>
