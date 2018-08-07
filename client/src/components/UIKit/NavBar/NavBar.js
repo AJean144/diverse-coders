@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Grid, GridItem } from '../Grid'
 import Logo from '../Logo'
 import TextInput from '../TextInput'
@@ -16,7 +17,10 @@ const NavBar = () => (
         dropShadow
     >
         <GridItem gridCol='8'>
-            <Logo />
+            {/* TODO: refactor this code to use a real logo and not just text */}
+            <Link style={{ textDecoration: 'none', color: 'white' }} to='/'>
+                <Logo />
+            </Link>
         </GridItem>
         <GridItem gridCol='4'>
             <TextInput
