@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SuperText from '../UIKit/SuperText'
 import Headline from '../UIKit/Headline'
 import Button from '../UIKit/Button'
@@ -21,7 +22,9 @@ const Header = () => (
             </Headline>
         </GridItem>
         <GridItem textAlign='center'>
-            <Button buttonText='Post a job - $299' />
+            <Link to='/new-job-post'>
+                <Button buttonText='Post a job - $299' />
+            </Link>
         </GridItem>
     </Grid>
 )
