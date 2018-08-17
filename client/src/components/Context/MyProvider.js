@@ -8,20 +8,29 @@ class MyProvider extends Component {
         super(props)
 
         this.state = {
-            users: [],
-            initialUsers: []
+            initialjobs: [],
+            jobs: [],
+            createJobPost: this.createJobPost
         }
+
+        this.createJobPost = this.createJobPost.bind(this)
     }
 
-    // Get users from the API
+    // Get job posts from the API
     componentDidMount() {
-        axios.get('https://randomuser.me/api/?results=10')
+        axios.get('http://localhost:3000/api/v1/job_posts')
+            .then((res) => this.setState({ jobs: res.data.jobs, initialjobs: res.data.jobs }))
+            .catch((err) => console.error(err))
+    }
+
+    createJobPost(payload) {
+        axios.post('http://localhost:3000/api/v1/job_posts', payload)
             .then((res) => {
-                const { data: { results } } = res;
-                this.setState({
-                    users: results,
-                    initialUsers: results,
-                })
+                const { data } = res
+                const { jobs } = this.state
+
+                jobs.push(data)
+                this.setState({ jobs })
             })
             .catch((err) => console.error(err))
     }

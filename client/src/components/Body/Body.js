@@ -59,12 +59,12 @@ const Body = () => (
             <MyContext>
                 {
                     (context) => {
-                        return context.state.users && context.state.users.map((user, i) => {
+                        return context.state.jobs && context.state.jobs.map((job, i) => {
                             const isEven = (i % 2) === 0
                             return <Grid
-                                key={(user.id.value + i)}
+                                key={(job.id)}
                                 gap='20px'
-                                cols='2'
+                                cols='3'
                                 bgColor={isEven ? theme.colors.contrast.base : theme.colors.contrast.dark}
                                 textColor={theme.textColors.inverse}
                                 justifyItems='center'
@@ -72,11 +72,10 @@ const Body = () => (
                                 padding='10px'
                             >
                                 <Grid
-                                    cols='55px 200px'
+                                    cols='200px'
                                     justifyItems='start'
                                     alignItems='center'
                                 >
-                                    <img src={user.picture.thumbnail} style={{ borderRadius: '100%', width: 40 }} />
                                     <Grid
                                         rows='2, 20px'
                                         justifyItems='start'
@@ -87,17 +86,18 @@ const Body = () => (
                                             fontFamily={theme.fonts.family.heading}
                                             textColor={theme.textColors.inverse}
                                             fontSize={theme.fonts.sizes.base}>
-                                            {`${user.name.first} ${user.name.last}`}
+                                            {job.company_name}
                                         </GridItem>
-                                        <GridItem textColor={theme.textColors.inverse} fontSize={theme.fonts.sizes.s}>{user.email}</GridItem>
+                                        <GridItem textColor={theme.textColors.inverse} fontSize={theme.fonts.sizes.s}>{job.title}</GridItem>
                                     </Grid>
                                 </Grid>
 
-                                <Grid
-                                    cols='1'
-                                >
-                                    {user.login.username}
-                                    {moment(user.dob).format('DD MMM YYYY')}
+                                <Grid col='1'>
+                                    {job.category}
+                                </Grid>
+
+                                <Grid cols='1'>
+                                    {moment(job.created_at).format('MMM DDdd, YYYY')}
                                 </Grid>
                             </Grid>
                         })

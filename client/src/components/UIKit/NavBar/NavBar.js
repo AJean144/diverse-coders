@@ -7,7 +7,7 @@ import Icon from '../Icon'
 
 import { theme } from '../../../config/theme'
 
-const NavBar = () => (
+const NavBar = ({ searchInput }) => (
     <Grid
         gap='20px'
         cols='12'
@@ -23,14 +23,14 @@ const NavBar = () => (
             </Link>
         </GridItem>
         <GridItem gridCol='4'>
-            <TextInput
+            {searchInput && <TextInput
                 padding='5px'
                 width='100%'
                 placeholder='css, rails, javascript...'
                 iconLeft={
                     <Icon name="search" size="14" color={theme.colors.contrast.base} />
                 }
-            />
+            />}
         </GridItem>
     </Grid>
 )

@@ -5,7 +5,7 @@ import Body from '../components/Body'
 
 const Home = (props) => (
     <Fragment>
-        <NavBar {...props} />
+        <NavBar {...props} searchInput />
         <Header {...props} />
         <Body />
     </Fragment>

@@ -20,6 +20,8 @@ const Grid = styled.div`
     ${props => props.fixed && `position: fixed;`}
     ${props => props.dropShadow && `box-shadow: ${theme.boxShadow.extraDark};`}
     ${props => props.alignItems && `align-items: ${theme.alignItems};`}
+    ${props => props.border && `border: ${props.border};`}
+    ${props => props.height && `height: ${props.height};`}
 
     ${props => props.justifyItems && `justify-items: ${props.justifyItems};`}
     ${props => props.justifyContent && `justify-content: ${props.justifyContent};`}
