@@ -6,7 +6,7 @@ import MyProvider from '../Context/MyProvider'
 import MyContext from '../Context/MyContext'
 import moment from 'moment'
 
-const Body = () => (
+const Body = (props) => (
     <Fragment>
         <Grid
             gap='20px'
@@ -65,11 +65,13 @@ const Body = () => (
                                 key={(job.id)}
                                 gap='20px'
                                 cols='3'
+                                onClick={() => context.state.showJobPost(job.id, props)}
                                 bgColor={isEven ? theme.colors.contrast.base : theme.colors.contrast.dark}
                                 textColor={theme.textColors.inverse}
                                 justifyItems='center'
                                 alignItems='center'
                                 padding='10px'
+                                hoverable
                             >
                                 <Grid
                                     cols='200px'

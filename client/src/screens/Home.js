@@ -7,7 +7,7 @@ const Home = (props) => (
     <Fragment>
         <NavBar {...props} searchInput />
         <Header {...props} />
-        <Body />
+        <Body {...props} />
     </Fragment>
 )
 

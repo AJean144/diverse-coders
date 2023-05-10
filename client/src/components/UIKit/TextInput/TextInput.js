@@ -16,19 +16,7 @@ const TextInput = ({ type, placeholder, inline, iconRight, label, name, labelWid
         )}
         <InputContainer>
             {iconLeft && <IconLeft>{iconLeft}</IconLeft>}
-            {type === 'text' && <Input
-                autoComplete="off"
-                width={width}
-                value={value}
-                onChange={handleChange}
-                placeholder={placeholder}
-                type={type}
-                name={name}
-                id={name}
-                iconLeft={iconLeft}
-                iconRight={iconRight}
-            />}
-            {type === 'select' &&
+            {type === 'select' ?
                 <Select
                     type={type}
                     width={width}
@@ -39,7 +27,20 @@ const TextInput = ({ type, placeholder, inline, iconRight, label, name, labelWid
                     iconLeft={iconLeft}
                     iconRight={iconRight}>
                     {options && options.map((option) => <option key={option.value} value={option.value}>{option.name}</option>)}
-                </Select>}
+                </Select>
+                :
+                <Input
+                    autoComplete="off"
+                    width={width}
+                    value={value}
+                    onChange={handleChange}
+                    placeholder={placeholder}
+                    type={type}
+                    name={name}
+                    id={name}
+                    iconLeft={iconLeft}
+                    iconRight={iconRight}
+                />}
             {iconRight && <IconRight>{iconRight}</IconRight>}
         </InputContainer>
     </Container>

@@ -5,6 +5,7 @@ import { Grid } from '../components/UIKit/Grid';
 import Button from '../components/UIKit/Button';
 import MyContext from '../components/Context/MyContext';
 import MyProvider from '../components/Context/MyProvider';
+// import { validateURL, validatePhoneNumber } from '../lib/utils';
 
 class CreateJobPost extends PureComponent {
     constructor(props) {
@@ -28,11 +29,9 @@ class CreateJobPost extends PureComponent {
     }
 
     handleChange(event) {
-        if (event.target.name && event.target.value) {
-            this.setState({
-                [event.target.name]: event.target.value
-            })
-        }
+        this.setState({
+            [event.target.name]: event.target.value
+        })
     }
 
     render() {
@@ -110,8 +109,8 @@ class CreateJobPost extends PureComponent {
                                 height='300px'
                                 border='1px solid #7A7A7A'
                             >
-                                <TextInput type='text' value={this.state.company_website} name='company_website' label="Where can the company be found on the web?" placeholder='Coders.com' handleChange={this.handleChange} />
-                                <TextInput type='text' value={this.state.company_email} name='company_email' label="What's your email?" placeholder='We will send your receipts to the email provided' handleChange={this.handleChange} />
+                                <TextInput type='url' value={this.state.company_website} name='company_website' label="Where can the company be found on the web?" placeholder='Coders.com' handleChange={this.handleChange} />
+                                <TextInput type='email' value={this.state.company_email} name='company_email' label="What's your email?" placeholder='We will send your receipts to the email provided' handleChange={this.handleChange} />
                                 <TextInput type='text' value={this.state.company_info} name='company_info' label="What's it like to work for this company?" placeholder='Discribe the company culture, pay, benifits, etc...' handleChange={this.handleChange} />
                             </Grid>
                         </Grid>

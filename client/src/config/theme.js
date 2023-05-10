@@ -22,6 +22,7 @@ export const theme = {
         main: '#393a3e',
         inverse: '#ffffff',
         link: '#ed7347',
+        light: '#C0C0C0'
     },
     fonts: {
         family: {

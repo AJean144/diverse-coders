@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { theme } from '../../../config/theme'
+import { darken } from '../../../lib/styleUtils'
 
 const setColumnsStyles = (props) => (
     `grid-template-columns: ${props.cols.includes('px')
@@ -26,6 +27,10 @@ const Grid = styled.div`
     ${props => props.justifyItems && `justify-items: ${props.justifyItems};`}
     ${props => props.justifyContent && `justify-content: ${props.justifyContent};`}
     ${props => props.alignContent && `justify-content: ${props.alignContent};`}
+
+    :hover {
+        ${props => props.hoverable && `background-color: ${darken(props.bgColor, 0.2)};`}
+    }
 `
 
 export default Grid

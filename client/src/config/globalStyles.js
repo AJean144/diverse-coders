@@ -30,19 +30,23 @@ const globalStyles = injectGlobal`
   ::selection { background: ${lighten(theme.colors.main.base, 0.6)}; }
 
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: ${lighten(theme.textColors.base, 0.6)};
+    color: ${theme.textColors.light};
+    font-weight: bold;
   }
 
   ::-moz-placeholder { /* Firefox 19+ */
-    color: ${lighten(theme.textColors.base, 0.6)};
+    color: ${theme.textColors.light};
+    font-weight: bold;
   }
 
   :-ms-input-placeholder { /* IE 10+ */
-    color: ${lighten(theme.textColors.base, 0.6)};
+    color: ${theme.textColors.light};
+    font-weight: bold;
   }
 
   :-moz-placeholder { /* Firefox 18- */
-    color: ${lighten(theme.textColors.base, 0.6)};
+    color: ${theme.textColors.light};
+    font-weight: bold;
   }
 
   ::-webkit-scrollbar {

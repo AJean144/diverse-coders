@@ -1,36 +1,45 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import axios from 'axios';
 
 import MyContext from './MyContext';
+import { API_PATH } from '../../lib/paths';
 
-class MyProvider extends Component {
+class MyProvider extends PureComponent {
     constructor(props) {
         super(props)
-
         this.state = {
             initialjobs: [],
             jobs: [],
-            createJobPost: this.createJobPost
+            createJobPost: this.createJobPost,
+            showJobPost: this.showJobPost,
+            selectedJobPost: {}
         }
-
-        this.createJobPost = this.createJobPost.bind(this)
     }
 
     // Get job posts from the API
     componentDidMount() {
-        axios.get('http://localhost:3000/api/v1/job_posts')
+        axios.get(`${API_PATH}job_posts`)
             .then((res) => this.setState({ jobs: res.data.jobs, initialjobs: res.data.jobs }))
             .catch((err) => console.error(err))
     }
 
-    createJobPost(payload) {
-        axios.post('http://localhost:3000/api/v1/job_posts', payload)
+    createJobPost = (payload) => (
+        axios.post(`${API_PATH}job_posts`, payload)
             .then((res) => {
                 const { data } = res
                 const { jobs } = this.state
 
                 jobs.push(data)
                 this.setState({ jobs })
+            })
+            .catch((err) => console.error(err))
+    )
+
+    showJobPost = (id, props) => {
+        axios.get(`${API_PATH}job_posts/${id}`)
+            .then((res) => {
+                this.setState({ selectedJobPost: res.data.job })
+                props.history.push(`job_posts/${id}`)
             })
             .catch((err) => console.error(err))
     }
